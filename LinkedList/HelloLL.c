@@ -11,6 +11,6 @@ struct  Node{
 
 int main(){
     int Node;
-printf(sizeof(Node));
+    struct node* m
 
 }
