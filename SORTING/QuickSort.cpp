@@ -1,30 +1,68 @@
-#include<stdio.h>
-#include<iostream>
+#include <stdio.h>
+#include <iostream>
 using namespace std;
 
-int partition(int arr[] , int lb , int ub){
-    int pivot , i , j;
+int partition(int arr[], int lb, int ub)
+{
+    int pivot, i, j;
     pivot = arr[lb];
-    i=lb;
-    j=ub;
+    i = lb;
+    j = ub;
 
-    while(i<j){
-        while()
-
+    while (i < j)
+    {
+        while (arr[i] <= pivot)
+        {
+            i++;
+        }
+        while (arr[j] > pivot)
+        {
+            j--;
+        }
+        if (i < j)
+        {
+            arr[i] = arr[i] + arr[j];
+            arr[j] = arr[i] - arr[j];
+            arr[i] = arr[i] - arr[j];
+        }
     }
-    pivot
+    arr[lb]=arr[lb]+arr[j];
+    arr[j]=arr[lb]-arr[j];
+    arr[lb]=arr[lb]-arr[j];
 
+    return j;
 }
 
+void quickSort(int arr[], int lb, int ub)
+{
+    if (lb < ub)
+    {
+        int j = partition(arr, lb, ub);
+        quickSort(arr, lb, j - 1);
+        quickSort(arr, j + 1, ub);
+    }
+}
 
-int main(){
+void printList(int arr[], int n)
+{
+    // int n = (sizeof(arr)/sizeof(int));
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+}
+
+int main()
+{
     printf("QUICK SORT GO BRRRRR...\n");
-    printf("Enter the size of list\n");
-    int n ; scanf("%d",&n);
+    printf("Enter the size of list...\n");
+    int n;
+    scanf("%d", &n);
     int list[n];
-    for(int i=0 ; i<n ; i++)
-        cin>>list[i];
-    
-    quickSort(list, 0 , n-1);
+    cout << "Enter the elements..." << endl;
+    for (int i = 0; i < n; i++)
+        cin >> list[i];
+
+    quickSort(list, 0, n - 1);
+    printList(list, n);
+
     return 0;
 }
