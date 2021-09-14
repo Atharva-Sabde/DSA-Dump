@@ -32,31 +32,23 @@ void quickSort(int arr[], int lb, int ub){
     }
 }
 
-// void printList(int arr[],int  n){
-//     for (int i = 0; i < n ; i++)
-//         cout << arr[i] << " ";
-// }
-void printList(int arr[]){
-    int arrSize = sizeof(arr)/sizeof(arr[0]);
-    // for (int i = 0; i < arrSize ; i++)
-    //     cout << arr[i] << " ";
-
-    cout<<"array is : "<<arrSize<<" long "<<endl;
+void printList(int arr[],int  n){
+    for (int i = 0; i < n ; i++)
+        cout << arr[i] << " ";
 }
+
 
 int main(){
     printf("QUICK SORT GO BRRRRR...\n");
     printf("Enter the size of list...\n");
-    int n;
-    scanf("%d", &n);
+    int n; scanf("%d", &n);
     int list[n];
     cout << "Enter the elements..." << endl;
     for (int i = 0; i < n; i++)
-        cin >> list[i];
+        scanf("%d",&list[i]);
 
     quickSort(list, 0, n - 1);
-    // printList(list ,n);
-    printList(list);
+    printList(list ,n);
 
     return 0;
 }
