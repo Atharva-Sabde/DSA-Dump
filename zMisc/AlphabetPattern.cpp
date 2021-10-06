@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main(){
-
+main(){
+    
 
                                             // A
                                             // AB
@@ -103,8 +103,4 @@ int main(){
 
 
 
-
-
-
-    return 0;
 }
